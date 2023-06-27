@@ -10,3 +10,10 @@
 *.xlsx
 tfidf/tfidf/*
 */__pychache__/*
+*.wav
+*.m4a
+**/.Rhistory
+**/.Rproj.user/
+**/.terraform/
+**/*.lock.hcl
+
