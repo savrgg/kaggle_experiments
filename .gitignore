@@ -1,9 +1,12 @@
 *.csv
 .vscode/*
 .DS_Store
+*.pyc
 *.env
 *.cache
-
+*.json
 .Rproj.user
 *basic.json
 *.xlsx
+tfidf/tfidf/*
+*/__pychache__/*
