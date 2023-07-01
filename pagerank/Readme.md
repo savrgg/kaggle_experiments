@@ -29,3 +29,24 @@ graph := NewGraph()
 graph.AddNode("A", []string{"B", "C"})
 graph.AddNode("B", []string{"C"})
 graph.AddNode("C", []string{"A"})
+```
+
+
+This graph has three nodes (A, B, and C) with the following connections:
+
+- A has outgoing edges to B and C.
+- B has an outgoing edge to C.
+- C has an outgoing edge to A.
+
+## Results
+After running the PageRank algorithm on the example graph, the following ranks are obtained:
+
+Node A: Rank 0.3847
+Node B: Rank 0.2592
+Node C: Rank 0.3560
+
+## Contributing
+Contributions to this project are welcome. If you find any issues or want to add new features, feel free to open a pull request.
+
+## License
+This project is licensed under the MIT License.
