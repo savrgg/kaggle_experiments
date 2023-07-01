@@ -5,3 +5,8 @@ type Node struct {
 	Edges []string
 	Rank  float64
 }
+
+type Graph struct {
+	Nodes []*Node
+}
+

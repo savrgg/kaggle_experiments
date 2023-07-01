@@ -1,13 +1,10 @@
+
 package main
 
 import (
 	"fmt"
 	"math"
 )
-
-type Graph struct {
-	Nodes []*Node
-}
 
 func NewGraph() *Graph {
 	return &Graph{}
