@@ -1,6 +1,6 @@
-artifact_location: mlflow-artifacts:/0
-creation_time: 1698383975116
+artifact_location: file:///Users/salvadorgarcia/Repos/kaggle_experiments/spark/mlruns/0
+creation_time: 1698428694294
 experiment_id: '0'
-last_update_time: 1698383975116
+last_update_time: 1698428694294
 lifecycle_stage: active
 name: Default

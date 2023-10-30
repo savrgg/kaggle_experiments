@@ -16,4 +16,4 @@ tfidf/tfidf/*
 **/.Rproj.user/
 **/.terraform/
 **/*.lock.hcl
-
+spark/mlruns/*

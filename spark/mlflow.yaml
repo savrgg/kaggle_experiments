@@ -1,2 +1,10 @@
-tracking_uri: http://127.0.0.1:5000/
-artifact_location: ./mlflow
+# MLflow Configuration
+
+# Tracking Server Configuration
+tracking_uri: file:///mlruns
+
+# Artifact Location Configuration
+artifact_location: ./mlflow-artifacts
+
+# Default Experiment Name
+default_experiment: Default
