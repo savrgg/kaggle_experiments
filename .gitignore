@@ -17,3 +17,4 @@ tfidf/tfidf/*
 **/.terraform/
 **/*.lock.hcl
 spark/mlruns/*
+*.pptx

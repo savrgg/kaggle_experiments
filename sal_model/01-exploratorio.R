@@ -222,19 +222,38 @@ data_rits$IdSucursal %>% unique %>% sort()
 data_vantec <- read_csv("data/VT_Clientes.csv")
 
 
-data_rits %>% select(IdCliente)
-data_rits_domicilios %>% 
-  filter(Tipo == "Fiscal") %>% 
-  group_by(IdCliente) %>% 
-  summarise(n = n_distinct(Tipo)) %>% 
-  arrange(desc(n))
 
 
-data_vantec %>% 
+xx <- data_rits_valid2 %>% select(IdCliente, Numero, Nombre, Empresa, Tipo, Activo) %>% 
+  left_join(
+    data_rits_domicilios %>% 
+      filter(Tipo == "Fiscal") %>% 
+      select(IdCliente, Calle, CP), by = c("IdCliente" = "IdCliente")
+  ) %>% 
+  filter(Activo == "Activo", Tipo == "CLIENTE")
+
+
+excluir <- (xx %>% count(Numero) %>% arrange(desc(n)) %>% filter(n>1))$Numero
+
+xx <- xx %>% filter(!(Numero %in% excluir))
+
+xx2 <- data_vantec %>% 
   select(Oficina, Numero, Nombre, Calle, CP) %>% 
-  left_join(data_rits)
+  left_join(xx, by = "Numero")
 
+xx2 %>% 
+  filter(!is.na(IdCliente)) %>% 
+  mutate(ind_valid = CP.x == CP.y) %>% 
+  count(ind_valid)
   
+# registros recientes o algunos años -- recientemente (algunos años para hoy hay controles por parte de legal)
+# Bitacora modificaciones sobre el cliente (identificar algún dato particular) - DArwin hay bitacora y da movimientos, pero están algo pesadas 
+# Bitacora
+
+
+# Tareas evaluar direcciones
+# Explorar tabla de bitacora
+
   
 
 
